@@ -310,6 +310,7 @@ p { margin: 0 0 1em; color: var(--text-dim); }
   color: var(--text-dim);
   font-size: 0.82rem;
 }
+.card .price-note { margin: 2px 0 14px; }
 
 .about-highlights {
   display: flex;
