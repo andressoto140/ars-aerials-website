@@ -21,10 +21,10 @@ You can also just double-click `index.html` to open it directly in a browser,
 though some browsers restrict local file access slightly — using `serve` is safer.
 
 ## Still needs your input (marked as placeholders)
-1. **Pricing** — NFC cards show "Starting at $25" and web dev packages show
-   $300+ / $700+ / custom as reasonable starting estimates. Update these once
-   you've settled on real numbers — they're in `index.html` under the `#nfc`
-   and `#webdev` sections (search for `price-value`).
+1. **Pricing** — NFC cards are $40 each or 3 for $99. Web dev packages are
+   Starter $300, Get Found Bundle $399 and Business $700+, each then $99/year.
+   Prices live in `index.html` under the `#nfc` and `#webdev` sections
+   (search for `price-value`).
 2. **Google Business Profile link** — once you (or a client) has a live NFC
    card, the actual review link comes from that business's own Google Business
    Profile "Get more reviews" short link, generated per-customer — not something
