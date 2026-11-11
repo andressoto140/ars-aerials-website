@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Andres Soto</title>
+<meta name="description" content="Software projects by Andres Soto, plus the ARS Aerials video channel and raw drone footage.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%231e3a9e%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22Arial%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>AS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap nav-wrap">
+    <a href="index.html" class="logo">Andres Soto</a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="index.html#experience">Experience</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="nfc.html">NFC cards</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-head">
+    <div class="wrap">
+      <h1>Projects</h1>
+      <p class="hero-sub">Software I've built, plus the video channel I run. Some repositories are private; I'm happy to walk through the code on a call.</p>
+      <nav class="jump" aria-label="On this page">
+        <a href="#software">Software</a>
+        <a href="#ars-aerials">ARS Aerials videos</a>
+        <a href="#drone-footage">Raw drone footage</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- SOFTWARE -->
+  <section class="section" id="software">
+    <div class="wrap">
+      <h2>Software</h2>
+
+      <article class="project" id="home-watch">
+        <div class="project-head">
+          <h3>Home Watch</h3>
+          <p class="project-meta">Python, YOLO11, OpenCV, FastAPI, Claude API, Telegram</p>
+          <p class="project-link private">Private repository</p>
+        </div>
+        <div class="project-body">
+          <p>Smart alerts for a Hikvision home camera system. It reads the recorder's video streams over the home network, uses a YOLO11 model to tell people apart from ordinary motion, and sends a Telegram alert with a photo and a one-line AI description of what happened.</p>
+          <ul class="project-points">
+            <li>Alert zones so people walking on the street are ignored</li>
+            <li>Quiet hours, with events still saved</li>
+            <li>A local dashboard listing every detection</li>
+            <li>A daily summary sent each evening</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="trading-bot">
+        <div class="project-head">
+          <h3>Trading Bot</h3>
+          <p class="project-meta">Python, alpaca-py, yfinance, pytest</p>
+          <p class="project-link private">Private repository</p>
+        </div>
+        <div class="project-body">
+          <p>An automated moving-average crossover strategy on an Alpaca paper-trading account. Each weekday at market open it downloads 100 days of prices, compares the 20-day and 50-day averages, and places an order only on a true crossover.</p>
+          <ul class="project-points">
+            <li>Settings in a config file, API keys kept out of the code</li>
+            <li>Dry-run mode that logs decisions without trading</li>
+            <li>Unit tests for the strategy logic</li>
+            <li>Runs on a schedule with Windows Task Scheduler and writes daily logs</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="framing-estimator">
+        <div class="project-head">
+          <h3>Framing Takeoff</h3>
+          <p class="project-meta">JavaScript, HTML, CSS</p>
+        </div>
+        <div class="project-body">
+          <p>An estimating tool for a family-owned wood framing company, built to replace hand-written quotes. It turns a job's measurements into a material takeoff and a priced quote the office can send.</p>
+          <ul class="project-points">
+            <li>Saves estimates so they can be reopened and edited</li>
+            <li>Exports a quote for the customer and a lumber list for the supplier</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="route-planner">
+        <div class="project-head">
+          <h3>Local sales route planner</h3>
+          <p class="project-meta">Node.js, ExcelJS, HTML</p>
+        </div>
+        <div class="project-body">
+          <p>Tools for my NFC review-card side business. I gathered 137 local businesses with 75 or fewer Google reviews, scored them as leads, and generated weekday and weekend driving routes.</p>
+          <ul class="project-points">
+            <li>Phone-friendly route pages with one-tap Google Maps directions</li>
+            <li>An Excel tracker with dropdowns and sales totals that update themselves</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="this-site">
+        <div class="project-head">
+          <h3>This website</h3>
+          <p class="project-meta">HTML, CSS, JavaScript, Netlify</p>
+          <p class="project-link"><a href="https://github.com/andressoto140/ars-aerials-website" target="_blank" rel="noopener">View on GitHub</a></p>
+        </div>
+        <div class="project-body">
+          <p>A hand-written static site with no framework. Changes go through GitHub pull requests, and Netlify publishes each merge to my custom domain.</p>
+        </div>
+      </article>
+
+      <article class="project" id="portfo">
+        <div class="project-head">
+          <h3>Flask portfolio</h3>
+          <p class="project-meta">Python, Flask, Jinja</p>
+          <p class="project-link"><a href="https://github.com/andressoto140/portfo" target="_blank" rel="noopener">View on GitHub</a></p>
+        </div>
+        <div class="project-body">
+          <p>My first portfolio site, from 2024. A Flask server renders the pages and saves contact-form messages to a CSV file.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ARS AERIALS -->
+  <section class="section section-tint" id="ars-aerials">
+    <div class="wrap two-up">
+      <div class="about-copy">
+        <h2>ARS Aerials</h2>
+        <p>The video channel I run. I shoot, write and edit every video myself. It has 83,000 followers on Facebook and 12,000 on TikTok, and the TikTok account is part of TikTok's creator monetization program.</p>
+        <p>Recent work includes a Spanish-language storytelling series for a Latin American audience.</p>
+        <p class="link-row">
+          <a href="https://www.facebook.com/people/ARS-Aerial/61571618784319/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.tiktok.com/@ars.aerials" target="_blank" rel="noopener">TikTok</a>
+        </p>
+      </div>
+      <div class="videos">
+        <h3>Pinned videos</h3>
+        <div class="video-row">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ars.aerials/video/7588570403388312863" data-video-id="7588570403388312863"><section><a href="https://www.tiktok.com/@ars.aerials/video/7588570403388312863" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote>
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ars.aerials/video/7581514598818368799" data-video-id="7581514598818368799"><section><a href="https://www.tiktok.com/@ars.aerials/video/7581514598818368799" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote>
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ars.aerials/video/7567537781476461854" data-video-id="7567537781476461854"><section><a href="https://www.tiktok.com/@ars.aerials/video/7567537781476461854" target="_blank" rel="noopener">Watch on TikTok</a></section></blockquote>
+        </div>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- RAW DRONE FOOTAGE -->
+  <section class="section" id="drone-footage">
+    <div class="wrap">
+      <h2>Raw drone footage</h2>
+      <p class="section-sub">Unedited clips straight from the drone, flown on a DJI Mini 3 and a SkyRover X1.</p>
+      <div class="footage-grid" id="footageGrid">
+        <!-- Add clips here, for example:
+        <figure class="clip">
+          <video controls playsinline preload="metadata" src="videos/clip-1.mp4"></video>
+          <figcaption>Location, month year</figcaption>
+        </figure>
+        -->
+      </div>
+      <p class="footage-empty">Clips are on the way.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year"></span> Andres Soto</p>
+    <p class="footer-links">
+      <a href="https://www.linkedin.com/in/andres-soto140" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/andressoto140" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
