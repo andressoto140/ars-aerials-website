@@ -3,245 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARS Aerials | Drone Content, Web Development &amp; NFC Google Review Cards</title>
-<meta name="description" content="ARS Aerials — aerial drone videography, web development, and NFC Google review cards. Based in Dade City, FL.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛸</text></svg>">
+<title>Andres Soto | Software Developer</title>
+<meta name="description" content="Andres Soto, software developer in Dade City, Florida, with two years of full-stack C#, .NET, Angular and SQL Server work for a government agency. AWS Certified Solutions Architect – Associate.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%231e3a9e%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22Arial%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>AS</text></svg>">
+<meta property="og:title" content="Andres Soto | Software Developer">
+<meta property="og:description" content="Full-stack C#, .NET and Angular developer in Dade City, Florida. AWS Certified Solutions Architect – Associate.">
+<meta property="og:image" content="https://andressotocloud.com/images/andres-portrait.jpg">
+<meta property="og:url" content="https://andressotocloud.com/">
+<meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="grid-overlay" aria-hidden="true"></div>
-
 <header class="site-header" id="top">
-  <div class="container nav-wrap">
-    <a href="#top" class="logo">ARS <span>AERIALS</span></a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="#nfc">NFC Cards</a>
-      <a href="#webdev">Web Dev</a>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
+  <div class="wrap nav-wrap">
+    <a href="index.html" class="logo">Andres Soto</a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#experience">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="nfc.html">NFC cards</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="tel:+18133129735" class="btn btn-primary nav-cta">Get a Quote</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span>
     </button>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="container hero-inner">
-      <p class="eyebrow">Dade City, Florida &middot; Aerial Content &amp; Digital Services</p>
-      <h1>We shoot from the sky. <br>We build for the web. <br>We get you 5&#9733; reviews.</h1>
-      <p class="hero-sub">ARS Aerials is a one-stop shop: cinematic drone videography, custom websites, and NFC Google-review cards that turn happy customers into public 5-star reviews — instantly.</p>
-      <div class="hero-actions">
-        <a href="tel:+18133129735" class="btn btn-primary">Call (813) 312-9735</a>
-        <a href="#services" class="btn btn-ghost">See services ↓</a>
-      </div>
-      <div class="hero-stats">
-        <div><strong>83K+</strong><span>Facebook followers</span></div>
-        <div><strong>12K+</strong><span>TikTok followers</span></div>
-        <div><strong>Dade City, FL</strong><span>&amp; surrounding areas</span></div>
-      </div>
-    </div>
-  </section>
+    <div class="wrap hero-grid">
+      <picture class="portrait">
+        <source srcset="images/andres-portrait.webp" type="image/webp">
+        <img src="images/andres-portrait.jpg" alt="Andres Soto smiling outdoors in a navy dress shirt" width="640" height="800" fetchpriority="high">
+      </picture>
 
-  <!-- SERVICES OVERVIEW -->
-  <section class="section" id="services">
-    <div class="container">
-      <h2 class="section-title">What we do</h2>
-      <p class="section-sub">Three services, one point of contact. Book one or bundle them all.</p>
+      <div class="hero-copy">
+        <h1>Andres Soto</h1>
+        <p class="hero-role">Software developer in Dade City, Florida.</p>
+        <p class="hero-sub">For the past two years I've built and maintained production web applications for a government agency, with C#, .NET and Angular on SQL Server. On my own time I build Python tools, from a camera system that spots people to a paper-trading bot.</p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary">See my projects</a>
+          <a href="mailto:arsoto140@yahoo.com" class="btn btn-plain">Email me</a>
+        </div>
 
-      <div class="cards-3">
-        <div class="card">
-          <div class="card-icon">🛸</div>
-          <h3>Aerial Videography &amp; Editing</h3>
-          <p>Drone videography and photography for real estate, events, businesses, and social content — shot, edited, color graded, and set to music in-house, ready to post.</p>
-          <a href="#portfolio" class="card-link">See our work →</a>
+      <dl class="glance">
+        <div>
+          <dt>Certification</dt>
+          <dd><a href="https://www.credly.com/badges/eb665e07-1e9d-46e1-b83c-ad2290779e7a/public_url" target="_blank" rel="noopener">AWS Certified Solutions Architect – Associate</a></dd>
         </div>
-        <div class="card">
-          <div class="card-icon">💻</div>
-          <h3>Web Development</h3>
-          <p>Custom websites for small businesses and personal brands — fast, mobile-friendly, and built to actually convert visitors into customers.</p>
-          <a href="#webdev" class="card-link">View packages →</a>
+        <div>
+          <dt>Education</dt>
+          <dd>B.S. Computer Information Systems, Saint Leo University, 2024</dd>
         </div>
-        <div class="card">
-          <div class="card-icon">⭐</div>
-          <h3>NFC Google Review Cards</h3>
-          <p>Tap-to-review NFC cards for your business. One tap sends customers straight to your Google review page — no app, no searching, no friction.</p>
-          <a href="#nfc" class="card-link">Learn more →</a>
+        <div>
+          <dt>Works with</dt>
+          <dd>C#, .NET Core, Angular, TypeScript, SQL Server, Python, AWS</dd>
         </div>
+        <div>
+          <dt>Elsewhere</dt>
+          <dd><a href="https://www.linkedin.com/in/andres-soto140" target="_blank" rel="noopener">LinkedIn</a>, <a href="https://github.com/andressoto140" target="_blank" rel="noopener">GitHub</a></dd>
+        </div>
+      </dl>
       </div>
     </div>
   </section>
 
-  <!-- NFC CARDS FEATURE -->
-  <section class="section section-alt" id="nfc">
-    <div class="container two-col">
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <ol class="timeline">
+        <!-- Employer intentionally not listed. -->
+        <li class="job">
+          <p class="job-when">Oct 2024 – present</p>
+          <div class="job-body">
+            <h3>Software Developer</h3>
+            <p class="job-where">Government agency</p>
+            <ul class="job-points">
+              <li>Build and maintain full-stack production applications with Angular, .NET Core and SQL Server.</li>
+              <li>Write REST APIs in ASP.NET Core with Entity Framework for data access.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="job">
+          <p class="job-when">2024</p>
+          <div class="job-body">
+            <h3>B.S. Computer Information Systems</h3>
+            <p class="job-where">Saint Leo University</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CERTIFICATION + SKILLS -->
+  <section class="section section-tint">
+    <div class="wrap two-up">
       <div>
-        <p class="eyebrow">Flagship product</p>
-        <h2>NFC Google Review Cards</h2>
-        <p class="lead">More Google reviews mean more trust, more visibility, and more customers. Our NFC cards make leaving a review as easy as tapping a phone.</p>
-
-        <ol class="steps">
-          <li><span>1</span> Customer taps the card on their phone (NFC, no app needed)</li>
-          <li><span>2</span> Your Google review page opens instantly</li>
-          <li><span>3</span> They leave a 5-star review in seconds</li>
-        </ol>
-
-        <div class="price-tag">
-          <span class="price-from">Per card</span>
-          <span class="price-value">$40</span>
-          <span class="price-note">or 3 cards for $99 · programmed with your Google review link, tested with you, and delivered free around Dade City, Zephyrhills, San Antonio &amp; Wesley Chapel</span>
-        </div>
-
-        <a href="tel:+18133129735" class="btn btn-primary">Call to Order</a>
-      </div>
-      <div class="nfc-visual">
-        <img src="images/nfc-review-card.png" alt="NFC Google review card — tap to rate your experience" class="nfc-card-photo">
-      </div>
-    </div>
-  </section>
-
-  <!-- WEB DEV PACKAGES -->
-  <section class="section" id="webdev">
-    <div class="container">
-      <h2 class="section-title">Web development packages</h2>
-      <p class="section-sub">Your own .com, hosting, and your first year all included — no monthly bills. After year one it's just $99/year (less than $10 a month) to keep your site online.</p>
-
-      <div class="cards-3">
-        <div class="card">
-          <h3>Starter</h3>
-          <p class="price-value small">$300<span> one-time</span></p>
-          <p class="price-note">then $99/year after year one</p>
-          <ul class="feature-list">
-            <li>Single-page, mobile-friendly site</li>
-            <li>Your own .com domain + hosting (year 1 included)</li>
-            <li>Click-to-call contact button</li>
-            <li>Small updates by text (hours, prices)</li>
-          </ul>
-        </div>
-        <div class="card card-highlight">
-          <span class="badge">Best value</span>
-          <h3>Get Found Bundle</h3>
-          <p class="price-value small">$399<span> one-time</span></p>
-          <p class="price-note">then $99/year after year one</p>
-          <ul class="feature-list">
-            <li>Everything in Starter</li>
-            <li>2 NFC Google review cards</li>
-            <li>Website linked to your Google Business Profile</li>
-            <li>Replace that Facebook link with a real website</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Business</h3>
-          <p class="price-value small">$700<span>+ one-time</span></p>
-          <p class="price-note">then $99/year after year one</p>
-          <ul class="feature-list">
-            <li>Multi-page site + photo gallery</li>
-            <li>Custom design &amp; branding</li>
-            <li>Contact form, map &amp; booking link</li>
-            <li>Google Business integration</li>
-          </ul>
+        <h2>Certification</h2>
+        <div class="cert">
+          <img class="cert-badge" src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate badge" width="120" height="120" loading="lazy">
+          <div>
+            <h3>AWS Certified Solutions Architect – Associate</h3>
+            <p>Designing secure, resilient and cost-effective systems on Amazon Web Services.</p>
+            <dl class="cert-dates">
+              <div><dt>Issued</dt><dd>Feb 2024</dd></div>
+              <div><dt>Valid until</dt><dd>Feb 2027</dd></div>
+            </dl>
+            <a href="https://www.credly.com/badges/eb665e07-1e9d-46e1-b83c-ad2290779e7a/public_url" target="_blank" rel="noopener">Verify on Credly</a>
+          </div>
         </div>
       </div>
-      <p class="price-disclaimer">Need e-commerce or custom features? Call for a quote. Your domain is registered in your business's name — it's always yours. Prices are starting points; every project gets a confirmed quote before work begins.</p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container two-col">
       <div>
-        <p class="eyebrow">Who's behind ARS Aerials</p>
-        <h2>Meet Andres — Software Developer &amp; Drone Operator</h2>
-        <p class="lead">I am a software developer with professional, full-stack experience building and maintaining production applications across Angular, .NET Core, and SQL Server. AWS Certified Solutions Architect, comfortable working across the stack, and I independently run ARS Aerials' drone content brand end-to-end.</p>
-
-        <div class="about-highlights">
-          <div class="highlight-item">💻 Professional full-stack development experience</div>
-          <div class="highlight-item">☁️ AWS Certified Solutions Architect – Associate</div>
-          <div class="highlight-item">🎓 B.S. Computer Information Systems, Saint Leo University (2024)</div>
-        </div>
-
-        <div class="about-links">
-          <a href="https://www.linkedin.com/in/andres-soto140" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/andressoto140" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-
-      <div class="skills-panel">
-        <h3>Tech stack</h3>
-        <div class="skill-tags">
-          <span>C#</span><span>.NET Core</span><span>ASP.NET Core</span><span>Angular</span>
-          <span>TypeScript</span><span>SQL Server</span><span>Entity Framework</span>
-          <span>REST APIs</span><span>AWS</span><span>Git/GitHub</span>
-        </div>
+        <h2>Skills</h2>
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>C#, TypeScript, JavaScript, Python, SQL, HTML and CSS</dd></div>
+          <div><dt>Frameworks</dt><dd>.NET Core, ASP.NET Core, Angular, Entity Framework, FastAPI, Flask</dd></div>
+          <div><dt>Data and cloud</dt><dd>SQL Server, AWS, Netlify</dd></div>
+          <div><dt>Tools</dt><dd>Git, GitHub, Visual Studio, SQL Server Management Studio, pytest</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section class="section section-alt" id="portfolio">
-    <div class="container">
-      <h2 class="section-title">Aerial content &amp; portfolio</h2>
-      <p class="section-sub">83K+ followers on Facebook and 12K+ on TikTok — every clip is shot and edited in-house, from raw drone footage to a finished video cut to music. Follow along or reach out to see full reels.</p>
-      <div class="social-row">
-        <a href="https://www.facebook.com/people/ARS-Aerial/61571618784319/" target="_blank" rel="noopener" class="social-pill">📘 Facebook — ARS Aerial (83K)</a>
-        <a href="https://www.tiktok.com/@ars.aerials" target="_blank" rel="noopener" class="social-pill">🎵 TikTok — @ars.aerials</a>
-      </div>
-      <div class="portfolio-grid">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ars.aerials/video/7588570403388312863" data-video-id="7588570403388312863" style="max-width: 325px;min-width: 325px;"><section></section></blockquote>
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ars.aerials/video/7581514598818368799" data-video-id="7581514598818368799" style="max-width: 325px;min-width: 325px;"><section></section></blockquote>
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ars.aerials/video/7567537781476461854" data-video-id="7567537781476461854" style="max-width: 325px;min-width: 325px;"><section></section></blockquote>
-      </div>
-      <script async src="https://www.tiktok.com/embed.js"></script>
-      <p class="portfolio-note">Our 3 pinned TikTok videos — edited, finished cuts. Tap play to watch.</p>
+  <!-- PROJECT TEASER -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Recent projects</h2>
+      <ul class="previews">
+        <li>
+          <a class="preview" href="projects.html#home-watch">
+            <!-- Illustration of a Home Watch alert as it arrives in Telegram -->
+            <div class="preview-art art-alert" aria-hidden="true">
+              <div class="alert">
+                <p class="alert-from">Front door camera</p>
+                <p class="alert-title">Person detected</p>
+                <p class="alert-text">“Delivery driver leaving a package at the door.”</p>
+                <p class="alert-time">7:42 PM</p>
+              </div>
+            </div>
+            <h3>Home Watch</h3>
+            <p>Person detection and AI alerts for home security cameras.</p>
+            <p class="preview-stack">Python, YOLO11, FastAPI</p>
+          </a>
+        </li>
+        <li>
+          <a class="preview" href="projects.html#trading-bot">
+            <!-- Illustration of a 20/50-day moving-average crossover -->
+            <div class="preview-art art-chart" aria-hidden="true">
+              <svg viewBox="0 0 300 150" preserveAspectRatio="none">
+                <polyline class="line-slow" points="0,95 40,92 80,90 120,88 160,84 200,78 240,72 300,64"/>
+                <polyline class="line-fast" points="0,120 40,112 80,104 120,96 160,80 200,62 240,50 300,38"/>
+                <circle class="cross" cx="146" cy="85" r="6"/>
+              </svg>
+              <p class="chart-tag">Buy 1 AAPL</p>
+              <p class="chart-legend"><span class="key-fast">20-day</span> <span class="key-slow">50-day</span></p>
+            </div>
+            <h3>Trading Bot</h3>
+            <p>Trades a paper account when two moving averages cross.</p>
+            <p class="preview-stack">Python, Alpaca, pytest</p>
+          </a>
+        </li>
+        <li>
+          <a class="preview" href="projects.html#framing-estimator">
+            <!-- Illustration of a Framing Takeoff material list -->
+            <div class="preview-art art-quote" aria-hidden="true">
+              <ul class="quote">
+                <li><span>Studs</span><span>2×4×8</span></li>
+                <li><span>Plates</span><span>2×4×16</span></li>
+                <li><span>Headers</span><span>2×10</span></li>
+                <li><span>Sheathing</span><span>7/16 OSB</span></li>
+              </ul>
+              <p class="quote-ready">Quote ready to send</p>
+            </div>
+            <h3>Framing Takeoff</h3>
+            <p>Turns a framing job's measurements into a material list and quote.</p>
+            <p class="preview-stack">JavaScript, HTML, CSS</p>
+          </a>
+        </li>
+        <li>
+          <a class="preview" href="projects.html#ars-aerials">
+            <div class="preview-art art-reach" aria-hidden="true">
+              <p><strong>83K</strong> Facebook followers</p>
+              <p><strong>12K</strong> TikTok followers</p>
+            </div>
+            <h3>ARS Aerials</h3>
+            <p>The video channel I shoot, write and edit myself.</p>
+            <p class="preview-stack">Filming, editing, storytelling</p>
+          </a>
+        </li>
+      </ul>
+      <p class="more"><a href="projects.html">See all projects</a></p>
+    </div>
+  </section>
 
-      <!-- RAW FOOTAGE: placeholder for upcoming raw drone clips (before/unedited) -->
-      <div class="raw-footage-block">
-        <h3>Raw drone footage</h3>
-        <p class="portfolio-note">Raw, unedited clips straight from the drone are coming soon — showing the flying side, separate from the edited reels above.</p>
-        <div class="raw-footage-grid" id="rawFootageGrid">
-          <!-- <video controls playsinline src="videos/raw-clip-1.mp4" poster="images/raw-clip-1-poster.jpg"></video> -->
-        </div>
+  <!-- NFC SIDE BUSINESS -->
+  <section class="nfc-band" aria-labelledby="nfcTitle">
+    <div class="wrap nfc-band-grid">
+      <img src="images/nfc-review-card.png" alt="" width="160" height="160" loading="lazy">
+      <div>
+        <h2 id="nfcTitle">I also make Google review cards</h2>
+        <p>A tap-to-review NFC card for local businesses. Customers tap it with their phone and the business's Google review page opens. Set up and delivered in East Pasco. Launch offer: my first 10 customers pay $25 a card instead of $40.</p>
+        <a href="nfc.html" class="btn btn-primary">See how the cards work</a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2 class="section-title">Let's work together</h2>
-      <p class="section-sub">Based in Dade City, FL — serving the surrounding Tampa Bay area. Remote-friendly for web projects.</p>
-
-      <div class="contact-grid">
-        <a href="tel:+18133129735" class="contact-card">
-          <span class="contact-icon">📞</span>
-          <span class="contact-label">Phone</span>
-          <span class="contact-value">(813) 312-9735</span>
-        </a>
-        <a href="mailto:arsoto140@yahoo.com" class="contact-card">
-          <span class="contact-icon">✉️</span>
-          <span class="contact-label">Email</span>
-          <span class="contact-value">arsoto140@yahoo.com</span>
-        </a>
-        <a href="https://www.facebook.com/people/ARS-Aerial/61571618784319/" target="_blank" rel="noopener" class="contact-card">
-          <span class="contact-icon">📘</span>
-          <span class="contact-label">Facebook</span>
-          <span class="contact-value">ARS Aerial</span>
-        </a>
-        <a href="https://www.tiktok.com/@ars.aerials" target="_blank" rel="noopener" class="contact-card">
-          <span class="contact-icon">🎵</span>
-          <span class="contact-label">TikTok</span>
-          <span class="contact-value">@ars.aerials</span>
-        </a>
+  <section class="section section-tint" id="contact">
+    <div class="wrap contact">
+      <img class="contact-photo" src="images/andres-headshot.webp" alt="" width="440" height="440" loading="lazy">
+      <div>
+        <h2>Get in touch</h2>
+        <a href="mailto:arsoto140@yahoo.com" class="contact-big">arsoto140@yahoo.com</a>
+        <p class="contact-line">Or call <a href="tel:+18133129735">(813) 312-9735</a>. Open to software development roles in the Tampa Bay area and remote.</p>
       </div>
     </div>
   </section>
@@ -249,14 +231,12 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <span>&copy; <span id="year"></span> ARS Aerials — Dade City, FL</span>
-    <span class="footer-links">
-      <a href="tel:+18133129735">Call</a>
-      <a href="mailto:arsoto140@yahoo.com">Email</a>
-      <a href="https://www.facebook.com/people/ARS-Aerial/61571618784319/" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.tiktok.com/@ars.aerials" target="_blank" rel="noopener">TikTok</a>
-    </span>
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year"></span> Andres Soto</p>
+    <p class="footer-links">
+      <a href="https://www.linkedin.com/in/andres-soto140" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/andressoto140" target="_blank" rel="noopener">GitHub</a>
+    </p>
   </div>
 </footer>
 

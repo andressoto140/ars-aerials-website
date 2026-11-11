@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFC Google Review Cards | Andres Soto, Dade City FL</title>
+<meta name="description" content="Tap-to-review NFC cards for local businesses. Launch offer: $25 a card for the first 10 customers (regular $40, or 3 for $99), programmed with your Google review link, tested with you and delivered free in Dade City, Zephyrhills, San Antonio and Wesley Chapel.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  /* Brand override for the landing skill: the site's card blue + kumquat
+     palette and Archivo/Source Serif type, instead of navy/teal/Inter. */
+  :root {
+    --card-blue: #1e3a9e;
+    --card-blue-deep: #172e7e;
+    --kumquat: #ee8a1c;
+    --kumquat-ink: #2a1600;
+    --ink: #121a2e;
+    --slate: #5a6478;
+    --rule: #d9dee8;
+    --counter: #f7f8fb;
+    --white: #ffffff;
+    --sky: #c9d6ff;
+    --font-sign: "Archivo", "Arial Narrow", Arial, sans-serif;
+    --font-text: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --gutter: clamp(16px, 4vw, 32px);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-text);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-sign);
+    font-stretch: 125%;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  a { color: var(--card-blue); text-underline-offset: 4px; }
+  img { max-width: 100%; height: auto; display: block; }
+  :focus-visible { outline: 3px solid var(--kumquat); outline-offset: 3px; }
+  .container { max-width: 1080px; margin: 0 auto; padding-inline: var(--gutter); }
+
+  /* Header, matching the rest of the site */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--white);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
+  .logo {
+    font-family: var(--font-sign); font-stretch: 125%; font-weight: 900;
+    font-size: 1.15rem; color: var(--ink); text-decoration: none; white-space: nowrap;
+  }
+  .nav-links { display: flex; gap: 24px; margin-left: auto; }
+  .nav-links a {
+    font-family: var(--font-sign); font-weight: 500; font-size: 0.95rem;
+    color: var(--slate); text-decoration: none;
+  }
+  .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--ink); }
+  .nav-links a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--card-blue); }
+  .nav-phone {
+    font-family: var(--font-sign); font-weight: 700; font-size: 0.95rem;
+    color: var(--card-blue); text-decoration: none; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    font-family: var(--font-sign); font-weight: 700; font-size: 1.05rem;
+    text-decoration: none;
+    padding: 15px 24px; border-radius: 6px;
+    background: var(--kumquat); color: var(--kumquat-ink);
+    transition: background-color 0.15s ease;
+  }
+  .btn-primary:hover { background: #f59a35; }
+  .btn-plain {
+    font-family: var(--font-sign); font-weight: 700;
+    text-decoration: underline; text-decoration-thickness: 2px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--counter);
+    border-bottom: 1px solid var(--rule);
+    min-height: calc(100vh - 68px);
+    display: flex;
+    align-items: center;
+    padding-block: clamp(40px, 7vw, 80px);
+  }
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(32px, 6vw, 72px);
+    align-items: center;
+    width: 100%;
+  }
+  .hero h1 { font-size: clamp(2.1rem, 4vw, 3.1rem); font-weight: 900; max-width: 20ch; }
+  .subtitle { margin-top: 22px; max-width: 46ch; color: var(--slate); font-size: 1.2rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 30px; }
+
+  /* Tap demo */
+  .demo { display: grid; justify-items: center; gap: 16px; }
+  .listing {
+    width: min(100%, 340px);
+    background: var(--white); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 14px 18px; font-family: var(--font-sign);
+  }
+  .listing-label { font-size: 0.8rem; color: var(--slate); }
+  .listing-name { font-weight: 700; font-size: 1.05rem; }
+  .listing-rating {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px 8px; margin-top: 2px;
+    font-size: 0.95rem; color: var(--slate); font-variant-numeric: tabular-nums;
+  }
+  .score { color: var(--ink); font-weight: 600; }
+  .stars { position: relative; display: inline-block; color: var(--rule); letter-spacing: 1px; line-height: 1; }
+  .stars-fill {
+    position: absolute; inset: 0 auto 0 0; width: var(--fill, 0%);
+    overflow: hidden; white-space: nowrap; color: var(--kumquat);
+    transition: width 0.5s ease;
+  }
+  .listing-new { margin-top: 8px; font-size: 0.9rem; font-weight: 600; color: var(--card-blue); }
+  .tap-card {
+    position: relative; width: min(100%, 300px);
+    padding: 0; border: 0; background: none; cursor: pointer;
+    border-radius: 22px; transform: rotate(-2deg);
+  }
+  .tap-card img { border-radius: 22px; filter: drop-shadow(0 18px 28px rgba(18, 26, 46, 0.18)); }
+  .tap-card:active { transform: rotate(-2deg) scale(0.97); }
+  .tap-ring {
+    position: absolute; left: 50%; top: 70%; width: 40%; aspect-ratio: 1;
+    border-radius: 50%; border: 3px solid var(--card-blue);
+    transform: translate(-50%, -50%) scale(0.4); opacity: 0; pointer-events: none;
+  }
+  .tap-card.is-tapped .tap-ring { animation: ring 0.8s ease-out; }
+  @keyframes ring {
+    0% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.4); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
+  }
+  .tap-hint { font-family: var(--font-sign); font-size: 0.9rem; color: var(--slate); text-align: center; }
+
+  /* ---------- Features ---------- */
+  .features { padding-block: clamp(64px, 10vw, 120px); }
+  .features h2 { font-size: clamp(1.8rem, 3.8vw, 2.6rem); }
+  .features-sub { margin-top: 14px; color: var(--slate); max-width: 60ch; }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .feature-card {
+    padding: 26px 24px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--white);
+    transition: border-color 0.2s ease;
+  }
+  .feature-card:hover { border-color: var(--card-blue); }
+  .feature-card svg { width: 28px; height: 28px; stroke: var(--card-blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .feature-card h3 { margin-top: 14px; font-size: 1.15rem; }
+  .feature-card p { margin-top: 8px; color: var(--slate); font-size: 1rem; }
+  .feature-step {
+    font-family: var(--font-sign); font-stretch: 125%; font-weight: 900;
+    font-size: 2.6rem; line-height: 1; color: var(--card-blue);
+  }
+  .for-who {
+    margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule);
+    font-style: italic; color: var(--slate); max-width: 64ch;
+  }
+
+  /* ---------- Closing CTA: the blue of the physical card ---------- */
+  .closing-cta {
+    background: var(--card-blue);
+    color: var(--white);
+    padding: clamp(72px, 11vw, 120px) 0;
+  }
+  .closing-cta .container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(32px, 6vw, 72px);
+    align-items: center;
+  }
+  .price-big {
+    font-size: clamp(4rem, 11vw, 7.5rem); font-weight: 900; line-height: 0.9;
+    font-variant-numeric: tabular-nums;
+  }
+  .price-big span { font-size: 0.28em; font-weight: 700; font-stretch: 100%; letter-spacing: 0; }
+  .price-deal { margin: 18px 0 28px; font-size: 1.2rem; color: var(--sky); max-width: 36ch; }
+  .price-deal s { color: var(--white); text-decoration-thickness: 2px; }
+  .offer-tag {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    background: var(--kumquat);
+    color: var(--kumquat-ink);
+    font-family: var(--font-sign);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .launch-offer {
+    margin-top: 20px;
+    padding: 12px 16px;
+    max-width: 46ch;
+    border-left: 4px solid var(--kumquat);
+    background: var(--white);
+    font-size: 1.05rem;
+  }
+  .cta-glow { position: relative; display: inline-block; }
+  .cta-glow::before {
+    content: ""; position: absolute; inset: -28px -40px;
+    background: radial-gradient(closest-side, rgba(238, 138, 28, 0.28), transparent);
+    z-index: 0; pointer-events: none;
+  }
+  .cta-glow .btn-primary { position: relative; z-index: 1; }
+  .included li { padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.22); }
+  .included li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.22); }
+  .closing-note { margin-top: 18px; color: var(--sky); font-size: 1rem; }
+  .closing-note a { color: var(--white); }
+
+  .site-footer { border-top: 1px solid var(--rule); padding-block: 24px; font-size: 0.95rem; color: var(--slate); }
+  .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { min-height: 0; }
+    .hero .container, .closing-cta .container { grid-template-columns: 1fr; }
+    .hero h1 { max-width: none; }
+    .nav-links { display: none; }
+    .nav-phone { margin-left: auto; }
+  }
+  @media (max-width: 580px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.15rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .stars-fill { transition: none; }
+    .tap-card.is-tapped .tap-ring { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">Andres Soto</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#experience">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="nfc.html" aria-current="page">NFC cards</a>
+    </nav>
+    <a href="tel:+18133129735" class="nav-phone">(813) 312-9735</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <h1>Get more Google reviews from the customers you already have.</h1>
+        <p class="subtitle">A review card for your counter. Customers tap it with their phone and your Google review page opens. No app, no searching. I set it up, test it with you and deliver it.</p>
+        <p class="launch-offer"><strong>Launch offer:</strong> my first 10 customers pay <strong>$25 a card</strong> instead of $40.</p>
+        <div class="hero-actions">
+          <a href="tel:+18133129735" class="btn-primary">Call (813) 312-9735</a>
+          <a href="#how" class="btn-plain">How it works</a>
+        </div>
+      </div>
+
+      <div class="demo">
+        <div class="listing" aria-live="polite">
+          <p class="listing-label">Example listing</p>
+          <p class="listing-name">Your business</p>
+          <p class="listing-rating">
+            <span class="score" id="demoScore" hidden></span>
+            <span class="stars" aria-hidden="true"><span class="stars-fill" id="demoStars" style="--fill: 0%">★★★★★</span>★★★★★</span>
+            <span class="count" id="demoCount">No reviews yet</span>
+          </p>
+          <p class="listing-new" id="demoNew" hidden>New 5-star review</p>
+        </div>
+        <button class="tap-card" id="tapCard" type="button" aria-describedby="tapHint">
+          <img src="images/nfc-review-card.png" alt="The review card: five stars, a Google logo and the words Tap to rate your experience" width="480" height="480">
+          <span class="tap-ring" aria-hidden="true"></span>
+        </button>
+        <p class="tap-hint" id="tapHint">Tap the card to see what your customers will do.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="how">
+    <div class="container">
+      <h2>How it works</h2>
+      <p class="features-sub">Most happy customers never leave a review because it takes too many steps. The card cuts it down to one.</p>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <p class="feature-step">1</p>
+          <h3>They tap the card</h3>
+          <p>Any iPhone or Android phone. No app to download.</p>
+        </article>
+        <article class="feature-card">
+          <p class="feature-step">2</p>
+          <h3>Your review page opens</h3>
+          <p>It goes straight to your Google review form. No searching for your business.</p>
+        </article>
+        <article class="feature-card">
+          <p class="feature-step">3</p>
+          <h3>They leave a review</h3>
+          <p>While they're still at your counter and happy with the visit.</p>
+        </article>
+        <article class="feature-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <h3>Set up for you</h3>
+          <p>I find your Google review link and program it into the card.</p>
+        </article>
+        <article class="feature-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <h3>Tested at your counter</h3>
+          <p>We try it together on your phone before I leave.</p>
+        </article>
+        <article class="feature-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6.5" cy="17.5" r="1.5"/><circle cx="18" cy="17.5" r="1.5"/></svg>
+          <h3>Delivered free</h3>
+          <p>In Dade City, Zephyrhills, San Antonio and Wesley Chapel.</p>
+        </article>
+      </div>
+
+      <p class="for-who">Made for barbershops, salons, cafés, restaurants, auto shops, pet groomers and anyone who serves customers in person.</p>
+    </div>
+  </section>
+
+  <section class="closing-cta" aria-labelledby="priceTitle">
+    <div class="container">
+      <div>
+        <p class="offer-tag">Launch offer for my first 10 customers</p>
+        <h2 id="priceTitle" class="price-big">$25 <span>a card</span></h2>
+        <p class="price-deal"><s>$40</s> regular price. After the first 10 customers, it's $40 a card or 3 for $99.</p>
+        <span class="cta-glow"><a href="tel:+18133129735" class="btn-primary">Call to order</a></span>
+        <p class="closing-note">Or email <a href="mailto:arsoto140@yahoo.com">arsoto140@yahoo.com</a></p>
+      </div>
+      <ul class="included">
+        <li>One-time price. No monthly fee, ever.</li>
+        <li>Your Google review link programmed in and tested with you.</li>
+        <li>Works on iPhone and Android, no app needed.</li>
+        <li>Free delivery in Dade City, Zephyrhills, San Antonio and Wesley Chapel.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Andres Soto, Dade City, FL</p>
+    <p><a href="index.html">Back to my résumé</a></p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Tap demo: each tap adds one 5-star review to the sample listing.
+  (function () {
+    const card = document.getElementById("tapCard");
+    const scoreEl = document.getElementById("demoScore");
+    const starsEl = document.getElementById("demoStars");
+    const countEl = document.getElementById("demoCount");
+    const newEl = document.getElementById("demoNew");
+    // Starts at zero, like most of the businesses this card is for.
+    let reviews = 0;
+    let total = 0;
+    let hideTimer;
+    card.addEventListener("click", () => {
+      reviews += 1;
+      total += 5;
+      const score = total / reviews;
+      scoreEl.textContent = score.toFixed(1);
+      scoreEl.hidden = false;
+      starsEl.style.setProperty("--fill", `${(score / 5) * 100}%`);
+      countEl.textContent = reviews === 1 ? "1 review" : `${reviews} reviews`;
+      newEl.hidden = false;
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => { newEl.hidden = true; }, 2200);
+      card.classList.remove("is-tapped");
+      void card.offsetWidth;
+      card.classList.add("is-tapped");
+    });
+  })();
+
+  // One entrance sequence and one scroll reveal. Skipped entirely when the
+  // visitor prefers reduced motion, or if GSAP failed to load.
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (window.gsap && !reduceMotion) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial states first, so nothing flashes before the timeline runs.
+    gsap.set([".hero h1", ".subtitle", ".hero-actions", ".launch-offer"], { opacity: 0, y: 24 });
+    gsap.set(".demo", { opacity: 0, y: 32 });
+    gsap.set(".feature-card", { opacity: 0, y: 36 });
+
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tl.to(".hero h1", { opacity: 1, y: 0, duration: 0.7 })
+      .to(".subtitle", { opacity: 1, y: 0, duration: 0.6 }, "-=0.4")
+      .to(".launch-offer", { opacity: 1, y: 0, duration: 0.5 }, "-=0.35")
+      .to(".hero-actions", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+      .to(".demo", { opacity: 1, y: 0, duration: 0.8 }, "-=0.45");
+
+    ScrollTrigger.batch(".feature-card", {
+      start: "top 85%",
+      once: true,
+      onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: "power2.out" })
+    });
+  }
+</script>
+</body>
+</html>
