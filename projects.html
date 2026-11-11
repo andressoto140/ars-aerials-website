@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
 <title>Projects | Andres Soto</title>
 <meta name="description" content="Software projects by Andres Soto, plus the ARS Aerials video channel and raw drone footage.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%231e3a9e%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22Arial%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>AS</text></svg>">
@@ -12,6 +13,8 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header" id="top">
   <div class="wrap nav-wrap">
@@ -28,12 +31,12 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <section class="page-head">
     <div class="wrap">
       <h1>Projects</h1>
-      <p class="hero-sub">Software I've built, plus the video channel I run. Some repositories are private; I'm happy to walk through the code on a call.</p>
+      <p class="hero-sub">Software I’ve built, plus the video channel I run. Some repositories are private; I’m happy to walk through the code on a call.</p>
       <nav class="jump" aria-label="On this page">
         <a href="#software">Software</a>
         <a href="#ars-aerials">ARS Aerials videos</a>
@@ -54,7 +57,7 @@
           <p class="project-link private">Private repository</p>
         </div>
         <div class="project-body">
-          <p>Smart alerts for a Hikvision home camera system. It reads the recorder's video streams over the home network, uses a YOLO11 model to tell people apart from ordinary motion, and sends a Telegram alert with a photo and a one-line AI description of what happened.</p>
+          <p>Smart alerts for a Hikvision home camera system. It reads the recorder’s video streams over the home network, uses a YOLO11 model to tell people apart from ordinary motion, and sends a Telegram alert with a photo and a one-line AI description of what happened.</p>
           <ul class="project-points">
             <li>Alert zones so people walking on the street are ignored</li>
             <li>Quiet hours, with events still saved</li>
@@ -87,7 +90,7 @@
           <p class="project-meta">JavaScript, HTML, CSS</p>
         </div>
         <div class="project-body">
-          <p>An estimating tool for a family-owned wood framing company, built to replace hand-written quotes. It turns a job's measurements into a material takeoff and a priced quote the office can send.</p>
+          <p>An estimating tool for a family-owned wood framing company, built to replace hand-written quotes. It turns a job’s measurements into a material takeoff and a priced quote the office can send.</p>
           <ul class="project-points">
             <li>Saves estimates so they can be reopened and edited</li>
             <li>Exports a quote for the customer and a lumber list for the supplier</li>
@@ -138,7 +141,7 @@
     <div class="wrap two-up">
       <div class="about-copy">
         <h2>ARS Aerials</h2>
-        <p>The video channel I run. I shoot, write and edit every video myself. It has 83,000 followers on Facebook and 12,000 on TikTok, and the TikTok account is part of TikTok's creator monetization program.</p>
+        <p>The video channel I run. I shoot, write and edit every video myself. It has 83,000 followers on Facebook and 12,000 on TikTok, and the TikTok account is part of TikTok’s creator monetization program.</p>
         <p>Recent work includes a Spanish-language storytelling series for a Latin American audience.</p>
         <p class="link-row">
           <a href="https://www.facebook.com/people/ARS-Aerial/61571618784319/" target="_blank" rel="noopener">Facebook</a>
@@ -163,9 +166,9 @@
       <h2>Raw drone footage</h2>
       <p class="section-sub">Unedited clips straight from the drone, flown on a DJI Mini 3 and a SkyRover X1.</p>
       <div class="footage-grid" id="footageGrid">
-        <!-- Add clips here, for example:
+        <!-- Add clips here. Set width/height to the clip’s real size to avoid layout shift, for example:
         <figure class="clip">
-          <video controls playsinline preload="metadata" src="videos/clip-1.mp4"></video>
+          <video controls playsinline preload="metadata" width="1920" height="1080" src="videos/clip-1.mp4"></video>
           <figcaption>Location, month year</figcaption>
         </figure>
         -->

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
 <title>NFC Google Review Cards | Andres Soto, Dade City FL</title>
 <meta name="description" content="Tap-to-review NFC cards for local businesses. Launch offer: $25 a card for the first 10 customers (regular $40, or 3 for $99), programmed with your Google review link, tested with you and delivered free in Dade City, Zephyrhills, San Antonio and Wesley Chapel.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>">
@@ -28,7 +29,8 @@
     --gutter: clamp(16px, 4vw, 32px);
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  /* scroll-padding keeps #how and focused elements clear of the sticky header */
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
   body {
     margin: 0;
     background: var(--white);
@@ -50,8 +52,19 @@
   p { margin: 0; }
   ul, ol { margin: 0; padding: 0; list-style: none; }
   a { color: var(--card-blue); text-underline-offset: 4px; }
+  a:hover { color: var(--card-blue-deep); text-decoration-thickness: 3px; }
+  a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(30, 58, 158, 0.15); }
   img { max-width: 100%; height: auto; display: block; }
-  :focus-visible { outline: 3px solid var(--kumquat); outline-offset: 3px; }
+  /* Ink on light backgrounds (17:1); kumquat on the blue price band (3.9:1). */
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .closing-cta :focus-visible { outline-color: var(--kumquat); }
+  .skip-link {
+    position: absolute; left: 16px; top: -100px; z-index: 100;
+    padding: 10px 16px; border-radius: 6px;
+    background: var(--ink); color: var(--white);
+    font-family: var(--font-sign); font-weight: 700; text-decoration: none;
+  }
+  .skip-link:focus { top: 12px; color: var(--white); }
   .container { max-width: 1080px; margin: 0 auto; padding-inline: var(--gutter); }
 
   /* Header, matching the rest of the site */
@@ -70,7 +83,14 @@
     font-family: var(--font-sign); font-weight: 500; font-size: 0.95rem;
     color: var(--slate); text-decoration: none;
   }
-  .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--ink); }
+  .nav-links a:hover { color: var(--ink); text-decoration: underline; text-decoration-thickness: 2px; }
+  .nav-links a[aria-current="page"] { color: var(--ink); }
+  .nav-toggle {
+    display: none; width: 40px; height: 40px; padding: 12px 8px;
+    background: none; border: 0; cursor: pointer;
+    flex-direction: column; justify-content: space-between;
+  }
+  .nav-toggle span { display: block; height: 2px; background: var(--ink); }
   .nav-links a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--card-blue); }
   .nav-phone {
     font-family: var(--font-sign); font-weight: 700; font-size: 0.95rem;
@@ -87,7 +107,7 @@
     background: var(--kumquat); color: var(--kumquat-ink);
     transition: background-color 0.15s ease;
   }
-  .btn-primary:hover { background: #f59a35; }
+  .btn-primary:hover { background: #f59a35; color: var(--kumquat-ink); }
   .btn-plain {
     font-family: var(--font-sign); font-weight: 700;
     text-decoration: underline; text-decoration-thickness: 2px;
@@ -131,7 +151,6 @@
   .stars-fill {
     position: absolute; inset: 0 auto 0 0; width: var(--fill, 0%);
     overflow: hidden; white-space: nowrap; color: var(--kumquat);
-    transition: width 0.5s ease;
   }
   .listing-new { margin-top: 8px; font-size: 0.9rem; font-weight: 600; color: var(--card-blue); }
   .tap-card {
@@ -242,8 +261,21 @@
     .hero { min-height: 0; }
     .hero .container, .closing-cta .container { grid-template-columns: 1fr; }
     .hero h1 { max-width: none; }
-    .nav-links { display: none; }
+    .nav-wrap { gap: 16px; }
     .nav-phone { margin-left: auto; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: absolute; top: 68px; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: var(--white); border-bottom: 1px solid var(--rule);
+      padding: 8px var(--gutter) 16px;
+      display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding-block: 12px; font-size: 1.05rem; color: var(--ink); }
+  }
+  @media (max-width: 380px) {
+    .nav-phone { font-size: 0.85rem; }
   }
   @media (max-width: 580px) {
     .features-grid { grid-template-columns: 1fr; }
@@ -251,26 +283,31 @@
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .stars-fill { transition: none; }
     .tap-card.is-tapped .tap-ring { animation: none; }
   }
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo">Andres Soto</a>
-    <nav class="nav-links" aria-label="Main">
+    <nav class="nav-links" id="navLinks" aria-label="Main">
       <a href="index.html#experience">Experience</a>
       <a href="projects.html">Projects</a>
       <a href="nfc.html" aria-current="page">NFC cards</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
     <a href="tel:+18133129735" class="nav-phone">(813) 312-9735</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span>
+    </button>
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <section class="hero">
     <div class="container">
@@ -295,7 +332,7 @@
           </p>
           <p class="listing-new" id="demoNew" hidden>New 5-star review</p>
         </div>
-        <button class="tap-card" id="tapCard" type="button" aria-describedby="tapHint">
+        <button class="tap-card" id="tapCard" type="button" aria-label="Tap the card to add a sample 5-star review" aria-describedby="tapHint">
           <img src="images/nfc-review-card.png" alt="The review card: five stars, a Google logo and the words Tap to rate your experience" width="480" height="480">
           <span class="tap-ring" aria-hidden="true"></span>
         </button>
@@ -323,7 +360,7 @@
         <article class="feature-card">
           <p class="feature-step">3</p>
           <h3>They leave a review</h3>
-          <p>While they're still at your counter and happy with the visit.</p>
+          <p>While they’re still at your counter and happy with the visit.</p>
         </article>
         <article class="feature-card">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -351,7 +388,7 @@
       <div>
         <p class="offer-tag">Launch offer for my first 10 customers</p>
         <h2 id="priceTitle" class="price-big">$25 <span>a card</span></h2>
-        <p class="price-deal"><s>$40</s> regular price. After the first 10 customers, it's $40 a card or 3 for $99.</p>
+        <p class="price-deal"><s>$40</s> regular price. After the first 10 customers, it’s $40 a card or 3 for $99.</p>
         <span class="cta-glow"><a href="tel:+18133129735" class="btn-primary">Call to order</a></span>
         <p class="closing-note">Or email <a href="mailto:arsoto140@yahoo.com">arsoto140@yahoo.com</a></p>
       </div>
@@ -377,6 +414,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Mobile menu: same behavior as the rest of the site, including Escape to close.
+  (function () {
+    const toggle = document.getElementById("navToggle");
+    const links = document.getElementById("navLinks");
+    const setMenu = (open) => {
+      links.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open);
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    toggle.addEventListener("click", () => setMenu(!links.classList.contains("open")));
+    links.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        setMenu(false);
+        toggle.focus();
+      }
+    });
+  })();
 
   // Tap demo: each tap adds one 5-star review to the sample listing.
   (function () {
